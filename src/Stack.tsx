@@ -4,31 +4,10 @@ import React from "react";
 import { TouchableOpacity, View, Text } from "react-native";
 import { useTheme, Appbar, Avatar } from "react-native-paper";
 
-type StackNavigatorParamlist = {
-	FeedList: undefined;
-	Details: {
-		id: number;
-		name: string;
-		handle: string;
-		date: string;
-		content: string;
-		image: string;
-		avatar: string;
-		comments: number;
-		retweets: number;
-		hearts: number;
-	};
-};
+import { Tabs } from "./Tabs";
+import { StackNavigatorParamlist } from "./types";
 
 const Stack = createStackNavigator<StackNavigatorParamlist>();
-
-function Home() {
-	return (
-		<View>
-			<Text>Hello Home</Text>
-		</View>
-	);
-}
 
 function Details() {
 	return (
@@ -106,7 +85,7 @@ export function StackNavigator() {
 		>
 			<Stack.Screen
 				name="FeedList"
-				component={Home}
+				component={Tabs}
 				options={({ route }: { route: any }) => {
 					const routeName = route.state
 						? route.state.routes[route.state.index].name

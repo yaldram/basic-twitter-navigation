@@ -6,7 +6,7 @@ import {
 	DrawerItem,
 } from "@react-navigation/drawer";
 import React from "react";
-import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import {
 	useTheme,
 	Avatar,
@@ -62,13 +62,13 @@ export function DrawerContent(props: Props) {
 							<Paragraph style={[styles.paragraph, styles.caption]}>
 								202
 							</Paragraph>
-							<Caption style={styles.caption}>Obserwuje</Caption>
+							<Caption style={styles.caption}>Followers</Caption>
 						</View>
 						<View style={styles.activitySection}>
 							<Paragraph style={[styles.paragraph, styles.caption]}>
 								159
 							</Paragraph>
-							<Caption style={styles.caption}>Obserwujący</Caption>
+							<Caption style={styles.caption}>Following</Caption>
 						</View>
 					</View>
 
@@ -107,7 +107,7 @@ export function DrawerContent(props: Props) {
 					<Drawer.Section title="Preferences">
 						<TouchableRipple onPress={toggleTheme}>
 							<View style={styles.preferences}>
-								<Text>Dark Theme</Text>
+								<Caption style={styles.caption}>Dark Theme</Caption>
 								<View pointerEvents="none">
 									<Switch value={theme === "dark"} />
 								</View>
