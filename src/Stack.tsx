@@ -1,21 +1,14 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
-import { TouchableOpacity, View, Text } from "react-native";
+import { TouchableOpacity } from "react-native";
 import { useTheme, Appbar, Avatar } from "react-native-paper";
 
+import { Details } from "./Details";
 import { Tabs } from "./Tabs";
 import { StackNavigatorParamlist } from "./types";
 
 const Stack = createStackNavigator<StackNavigatorParamlist>();
-
-function Details() {
-	return (
-		<View>
-			<Text>Hello Details</Text>
-		</View>
-	);
-}
 
 export function StackNavigator() {
 	const theme = useTheme();
